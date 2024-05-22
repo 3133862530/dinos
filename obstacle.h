@@ -13,8 +13,8 @@ private:
         cactusBigShape.setOrigin(25.0f, 55.0f);
         cactusBigShape.setPosition(x, y);
         cactusBigShape.setTexture(&texture);
-
-
+        //cactusBigShape.setOutlineColor(Color::Black);
+        cactusBigShape.setOutlineThickness(2.0f);
 
         window.draw(cactusBigShape);
     }
@@ -25,8 +25,8 @@ private:
         cactusSmallShape.setOrigin(20.0f, 40.0f);
         cactusSmallShape.setPosition(x, y);
         cactusSmallShape.setTexture(&texture);
-
-
+        //cactusSmallShape.setOutlineColor(Color::Black);
+        cactusSmallShape.setOutlineThickness(2.0f);
         window.draw(cactusSmallShape);
     }
 
@@ -36,8 +36,8 @@ private:
         cactiShape.setOrigin(45.0f, 40.0f);
         cactiShape.setPosition(x, y);
         cactiShape.setTexture(&texture);
-
-
+        //cactiShape.setOutlineColor(Color::Black);
+        cactiShape.setOutlineThickness(2.0f);
         window.draw(cactiShape);
     }
 public:

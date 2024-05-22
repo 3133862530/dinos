@@ -80,7 +80,7 @@ public:
         birdShape.setPosition(x, y);
         birdShape.setTexture(&textures[texturesIndex]);
 
-        birdShape.setOutlineColor(Color::Black);
+        //birdShape.setOutlineColor(Color::Black);
         birdShape.setOutlineThickness(2.0f);
 
         window.draw(birdShape);

@@ -194,9 +194,10 @@ public:
 
             //设置矩形形状的位置，蹲下时需要向下移动一点
             dinoShape.setPosition(100, y + 30);
-            //设置矩形形状的轮廓颜色和厚度
-            dinoShape.setOutlineColor(Color::Black);
-            dinoShape.setOutlineThickness(2.0f);
+
+            //设置矩形形状的轮廓颜色和厚度,用于碰撞测试
+            //dinoShape.setOutlineColor(Color::Black);
+            //dinoShape.setOutlineThickness(2.0f);
 
             //将矩形形状绘制到窗口中
             window.draw(dinoShape);
