@@ -19,8 +19,11 @@ using namespace std;
 
 //"the animation get frozen in a jump after a death"
 
-int main(){
+int main()
+{
   DinoGame dinoGame(1500,750);
+  while (!Start()) {};
+
   dinoGame.Run();
   return 0;
 }
