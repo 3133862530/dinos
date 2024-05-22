@@ -108,7 +108,7 @@ public:
         UsingText.setFillColor(Color::Black);
         window.draw(UsingText);
 
-        Texture Begin;
+        Texture Begin;//初始界面加只小恐龙美化
         Begin.loadFromFile("art/dino.png");
         //这个向量表示一个大小为 90 像素宽、110 像素高的矩形，用于绘制站立或跳跃状态的恐龙。
         RectangleShape dinoShape(Vector2f(90.0f, 110.0f));

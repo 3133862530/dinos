@@ -5,7 +5,7 @@
 #include <sstream>
 #include <fstream>
 #include"Login.h"
-
+using namespace sf;
 /*
 art/font.ttf
 */
@@ -17,7 +17,7 @@ struct Account
 //检查用户输入的用户名和密码是否与已注册的账号信息匹配
 bool login(const std::string& username, const std::string& password, const std::vector<Account>& accounts)
 {
-    for (const auto& acc : accounts)
+    for (const auto& acc : accounts)//C++11循环的新写法！
     {
         if (acc.username == username && acc.password == password)
         {
@@ -43,7 +43,7 @@ void registerAccount(const std::string& username, const std::string& password, s
 
 bool Login()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Login System");
+    sf::RenderWindow window(sf::VideoMode(900, 800), "Login System");
 
     sf::Font font;
     if (!font.loadFromFile("art/font.ttf"))
@@ -51,6 +51,8 @@ bool Login()
         std::cerr << "Failed to load font\n";
         return false;
     }
+
+   
 
     sf::Text text;
     text.setFont(font);
@@ -73,7 +75,7 @@ bool Login()
         }
         inputFile.close();
     }
-    else 
+    else
     {
         std::cout << "文件鼠了。\n";
     }
@@ -137,6 +139,24 @@ bool Login()
 
         window.clear(sf::Color::White);
         window.draw(text);
+        Texture LoginDino;//初始界面加只小恐龙美化
+        LoginDino.loadFromFile("art/dino.png");
+        //这个向量表示一个大小为 90 像素宽、110 像素高的矩形，用于绘制站立或跳跃状态的恐龙。
+        RectangleShape LoginDinoShape(Vector2f(180.0f, 220.0f));
+        LoginDinoShape.setTexture(&LoginDino);
+        LoginDinoShape.setOrigin(45.0f, 55.0f);
+
+        LoginDinoShape.setPosition(150, 300); //设置矩形形状的位置
+
+        window.draw(LoginDinoShape);//绘制
+
+        Text LoginText("Please Login!\ninput ID and Password with CTRL+ENTER", font, 30);
+        LoginText.setOrigin(0, 0);
+        LoginText.setPosition(10, 490);
+        LoginText.setFillColor(Color::Black);
+        window.draw(LoginText);
+
+        
         window.display();
     }
 }
