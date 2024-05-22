@@ -139,15 +139,29 @@ bool Login()
 
         window.clear(sf::Color::White);
         window.draw(text);
+
+        Texture LoginSacti;//初始界面加个仙人掌美化
+        LoginSacti.loadFromFile("art/cacti.png");
+        RectangleShape LoginSactiShape(Vector2f(130.0f, 150.0f));
+        LoginSactiShape.setTexture(&LoginSacti);
+        LoginSactiShape.setOrigin(45.0f, 55.0f);
+        LoginSactiShape.setPosition(660, 370); //设置矩形形状的位置
+        window.draw(LoginSactiShape);//绘制
+
+        Texture LoginBird;//初始界面加只小鸟美化
+        LoginBird.loadFromFile("art/bird2.png");
+        RectangleShape LoginBirdShape(Vector2f(180.0f, 220.0f));
+        LoginBirdShape.setTexture(&LoginBird);
+        LoginBirdShape.setOrigin(45.0f, 55.0f);
+        LoginBirdShape.setPosition(390, 360); //设置矩形形状的位置
+        window.draw(LoginBirdShape);//绘制
+
         Texture LoginDino;//初始界面加只小恐龙美化
         LoginDino.loadFromFile("art/dino.png");
-        //这个向量表示一个大小为 90 像素宽、110 像素高的矩形，用于绘制站立或跳跃状态的恐龙。
-        RectangleShape LoginDinoShape(Vector2f(180.0f, 220.0f));
+        RectangleShape LoginDinoShape(Vector2f(180.0f, 220.0f));//这个向量表示一个大小为180像素宽、220像素高的矩形，用于绘制站立或跳跃状态的恐龙。
         LoginDinoShape.setTexture(&LoginDino);
         LoginDinoShape.setOrigin(45.0f, 55.0f);
-
         LoginDinoShape.setPosition(150, 300); //设置矩形形状的位置
-
         window.draw(LoginDinoShape);//绘制
 
         Text LoginText("Please Login!\ninput ID and Password with CTRL+ENTER", font, 30);
