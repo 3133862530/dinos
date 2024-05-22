@@ -223,7 +223,7 @@ public:
 
                 dino->Update(gravity, true);
 
-                Text RestartText("Press Any Key to restart", font, 48);
+                Text RestartText("  Made by Wyl Lcx Nph\n\nPress Any Key to restart", font, 48);
                 RestartText.setOrigin(0, 0);
                 RestartText.setPosition(350, 250);
                 RestartText.setFillColor(Color::Black);
